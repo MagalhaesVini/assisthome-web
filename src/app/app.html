@@ -1,33 +1,11 @@
-<mat-toolbar class="main-toolbar">
-  <!-- Botão Menu (hambúrguer) -->
-  <button mat-icon-button (click)="opened.set(!opened())">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <!-- Título da Página -->
-  <span class="toolbar-title">{{ title() }}</span>
-
-  <!-- Espaço vazio para empurrar o usuário para a direita -->
-  <span class="spacer"></span>
-
-  <!-- Área do Usuário (Logado) -->
-  <div class="user-area">
-    <div class="user-avatar">
-      <mat-icon>person</mat-icon>
-    </div>
-    <span class="user-name">Carlos Oliveira</span>
-    <mat-icon class="dropdown-icon">arrow_drop_down</mat-icon>
-  </div>
-</mat-toolbar>
-
-<mat-sidenav-container>
-  <!-- Menu Lateral (Sidebar) -->
+<mat-sidenav-container class="sidenav-container">
   <mat-sidenav [opened]="opened()" mode="side" class="custom-sidenav">
     <app-sidebar />
   </mat-sidenav>
 
-  <!-- Área de Conteúdo Principal -->
   <mat-sidenav-content>
+    <app-header [title]="title()" (toggleMenu)="opened.set(!opened())"></app-header>
+
     <div class="content-area">
       <router-outlet />
     </div>

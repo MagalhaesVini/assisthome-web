@@ -2,82 +2,139 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: #ffffff;
 }
 
 .brand-section {
     display: flex;
     align-items: center;
-    padding: 20px 16px;
-    border-bottom: 1px solid transparent;
-    /* Opcional caso queira linha separadora */
+    padding: 32px 20px 24px 20px;
+    /* Mais espaço no topo */
     margin-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+    /* Linha divisória sutil */
 
     .brand-icon {
         color: #1976d2;
-        /* Azul do logo */
-        font-size: 32px;
-        height: 32px;
-        width: 32px;
+        font-size: 40px;
+        /* Ícone maior */
+        height: 40px;
+        width: 40px;
         margin-right: 12px;
     }
 
     .brand-name {
         color: #1976d2;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 22px;
+        /* Fonte um pouco maior */
+        font-weight: 700;
+        /* Peso mais forte */
+        letter-spacing: -0.5px;
+        /* Ajuste de espaçamento elegante */
     }
 }
 
-/* Estilização dos itens de menu */
+mat-nav-list {
+    padding: 8px 12px;
+    /* Mais espaço interno */
+}
+
 .menu-item {
-    margin: 4px 12px;
-    border-radius: 8px;
+    margin-bottom: 4px;
+    border-radius: 12px;
     height: 48px;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transição mais suave e moderna */
 
     .menu-icon {
-        color: #555;
+        color: #64748b;
+        /* Cinza azulado mais elegante */
+        margin-right: 4px;
+    }
+
+    span {
+        font-weight: 500;
+        color: #334155;
     }
 
     &:hover {
-        background-color: #f5f5f5;
+        background-color: #f8fafc;
+        /* Fundo extremamente leve */
+        transform: translateX(4px);
+        /* Leve movimento para a direita ao passar o mouse */
+
+        .menu-icon {
+            color: #1976d2;
+        }
     }
 
-    /* Estilo do item ativo (Clientes na imagem) */
+    /* Estado Ativo - O grande diferencial */
     &.active-menu-item {
-        background-color: #e3f2fd;
-        /* Azul clarinho */
+        background-color: #eff6ff;
+        /* Azul ainda mais suave e limpo */
         color: #1976d2;
+        box-shadow: 0 2px 4px rgba(25, 118, 210, 0.08);
+        /* Sombra sutil */
+        position: relative;
+
+        /* Indicador lateral esquerdo (marcador) */
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 24px;
+            width: 4px;
+            background-color: #1976d2;
+            border-radius: 0 4px 4px 0;
+        }
 
         .menu-icon {
             color: #1976d2;
         }
 
         span {
-            font-weight: 500;
+            color: #1976d2;
+            font-weight: 600;
         }
     }
 }
 
 .help-section {
     margin-top: auto;
-    padding: 16px;
+    padding: 20px 16px;
     border-top: 1px solid #f0f0f0;
 
     .help-btn {
         width: 100%;
         justify-content: flex-start;
-        color: #555;
+        color: #64748b;
         font-weight: 400;
-        padding: 0 8px;
+        padding: 0 12px;
+        height: 44px;
+        border-radius: 10px;
+        transition: all 0.2s;
+
+        &:hover {
+            background-color: #f8fafc;
+            color: #1976d2;
+
+            .arrow-icon {
+                color: #1976d2;
+            }
+        }
 
         mat-icon {
             margin-right: 12px;
+            font-size: 22px;
+            height: 22px;
+            width: 22px;
         }
 
         .arrow-icon {
             margin-left: auto;
-            color: #999;
+            color: #94a3b8;
         }
     }
 }

@@ -1,0 +1,118 @@
+.page-container {
+    padding: 0;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    color: #1976d2;
+    font-size: 14px;
+    margin-bottom: 16px;
+
+    mat-icon {
+        font-size: 18px;
+        height: 18px;
+        width: 18px;
+        margin: 0 6px;
+        color: #999;
+    }
+
+    span:last-child {
+        color: #333;
+        font-weight: 500;
+    }
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+    .page-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #222;
+        margin: 0;
+    }
+
+    .header-actions {
+        display: flex;
+        gap: 12px;
+
+        .action-btn-header {
+            height: 40px;
+
+            mat-icon {
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+.info-card {
+    margin-bottom: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    mat-card-header {
+        padding: 16px 24px;
+        border-bottom: 1px solid #f0f0f0;
+
+        mat-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+        }
+    }
+
+    mat-card-content {
+        padding: 24px;
+    }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        &.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .value {
+            font-size: 15px;
+            color: #222;
+        }
+    }
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    width: fit-content;
+
+    &.status-waiting {
+        background-color: #e3f2fd;
+        color: #1976d2;
+    }
+
+    &.status-available {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+    }
+}

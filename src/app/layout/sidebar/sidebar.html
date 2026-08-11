@@ -1,11 +1,9 @@
 <div class="sidebar-container">
-  <!-- Logo -->
   <div class="brand-section">
-    <mat-icon class="brand-icon">home</mat-icon>
+    <mat-icon class="brand-icon">verified_user</mat-icon>
     <span class="brand-name">AssistHome</span>
   </div>
 
-  <!-- Links de Navegação -->
   <mat-nav-list>
     @for (item of menuItems; track item.route) {
     <a mat-list-item [routerLink]="item.route" routerLinkActive="active-menu-item" class="menu-item">
@@ -15,7 +13,6 @@
     }
   </mat-nav-list>
 
-  <!-- Botão Ajuda (rodapé do menu) -->
   <div class="help-section">
     <button mat-button class="help-btn">
       <mat-icon>help_outline</mat-icon>

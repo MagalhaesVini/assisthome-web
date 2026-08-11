@@ -1,86 +1,25 @@
-/* Variáveis de cores baseadas na imagem */
 $primary-blue: #1976d2;
-$light-blue-bg: #e3f2fd;
 $text-color: #333;
 
 :host {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-/* Estilização da Toolbar */
-.main-toolbar {
-    background: #fff;
-    color: $text-color;
-    border-bottom: 1px solid #e0e0e0;
-    height: 64px;
-    padding: 0 24px;
-
-    .toolbar-title {
-        font-size: 18px;
-        font-weight: 500;
-        margin-left: 12px;
-    }
-
-    .spacer {
-        flex: 1 1 auto;
-    }
-
-    .user-area {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-
-        .user-avatar {
-            background-color: $primary-blue;
-            color: #fff;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            mat-icon {
-                font-size: 20px;
-                width: 20px;
-                height: 20px;
-            }
-        }
-
-        .user-name {
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .dropdown-icon {
-            color: #757575;
-            font-size: 24px;
-            width: 24px;
-            height: 24px;
-        }
-    }
-}
-
-/* Ajuste do Sidenav */
 mat-sidenav-container {
-    flex: 1;
-    background-color: #f5f7fa;
-    /* Fundo cinza claro do conteúdo */
+  flex: 1;
+  background-color: #f5f7fa;
 }
 
 .custom-sidenav {
-    width: 240px;
-    background: #fff;
-    border-right: none;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-    padding-top: 0;
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
 }
 
 .content-area {
-    padding: 24px;
-    height: 100%;
-    box-sizing: border-box;
+  padding: 24px;
+  height: 100%;
+  box-sizing: border-box;
 }

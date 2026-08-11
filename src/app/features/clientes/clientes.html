@@ -1,0 +1,77 @@
+<div class="page-container">
+    <div class="page-header">
+        <h1 class="page-title">Listagem de Clientes</h1>
+        <button mat-raised-button color="primary" class="btn-new-client" (click)="abrirModalNovoCliente()">
+            <mat-icon>add</mat-icon> Novo cliente
+        </button>
+    </div>
+
+    <div class="filters-row">
+        <mat-form-field appearance="outline" class="search-field">
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput placeholder="Pesquisar por nome, CPF ou e-mail">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="status-field">
+            <mat-icon matPrefix>filter_list</mat-icon>
+            <mat-select placeholder="Todos os status">
+                <mat-option value="all">Todos os status</mat-option>
+                <mat-option value="active">Ativo</mat-option>
+                <mat-option value="inactive">Inativo</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <mat-card class="table-card">
+        <table mat-table [dataSource]="clientes" class="clientes-table">
+
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let cliente"> {{ cliente.nome }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cpf">
+                <th mat-header-cell *matHeaderCellDef> CPF </th>
+                <td mat-cell *matCellDef="let cliente"> {{ cliente.cpf }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="telefone">
+                <th mat-header-cell *matHeaderCellDef> Telefone </th>
+                <td mat-cell *matCellDef="let cliente"> {{ cliente.telefone }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> E-mail </th>
+                <td mat-cell *matCellDef="let cliente"> {{ cliente.email }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let cliente">
+                    <span class="status-chip"
+                        [ngClass]="{'ativo': cliente.status === 'Ativo', 'inativo': cliente.status === 'Inativo'}">
+                        {{ cliente.status }}
+                    </span>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="acoes">
+                <th mat-header-cell *matHeaderCellDef> Ações </th>
+                <td mat-cell *matCellDef="let cliente">
+                    <button mat-stroked-button color="primary" class="action-btn">
+                        <mat-icon>visibility</mat-icon> Ver
+                    </button>
+                    <button mat-stroked-button color="primary" class="action-btn">
+                        <mat-icon>edit</mat-icon> Editar
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page">
+        </mat-paginator>
+    </mat-card>
+</div>
