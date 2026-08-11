@@ -8,9 +8,9 @@ import { NotFoundComponent } from './pages/not-found/not-found';
 export const routes: Routes = [
   { path: '', redirectTo: 'clientes', pathMatch: 'full' },
   { path: 'clientes', component: ClientesComponent },
-  // { path: 'planos', component: PlanosComponent },
-  // { path: 'prestadores', component: PrestadoresComponent },
-  // { path: 'atendimentos', component: AtendimentosComponent },
+  { path: 'planos', component: PlanosComponent },
+  { path: 'prestadores', component: PrestadoresComponent },
+  { path: 'atendimentos', component: AtendimentosComponent },
 
   // { path: '**', component: NotFoundComponent }
 ];
