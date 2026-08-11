@@ -1,0 +1,83 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    padding: 20px 16px;
+    border-bottom: 1px solid transparent;
+    /* Opcional caso queira linha separadora */
+    margin-bottom: 8px;
+
+    .brand-icon {
+        color: #1976d2;
+        /* Azul do logo */
+        font-size: 32px;
+        height: 32px;
+        width: 32px;
+        margin-right: 12px;
+    }
+
+    .brand-name {
+        color: #1976d2;
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+
+/* Estilização dos itens de menu */
+.menu-item {
+    margin: 4px 12px;
+    border-radius: 8px;
+    height: 48px;
+    transition: all 0.2s;
+
+    .menu-icon {
+        color: #555;
+    }
+
+    &:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Estilo do item ativo (Clientes na imagem) */
+    &.active-menu-item {
+        background-color: #e3f2fd;
+        /* Azul clarinho */
+        color: #1976d2;
+
+        .menu-icon {
+            color: #1976d2;
+        }
+
+        span {
+            font-weight: 500;
+        }
+    }
+}
+
+.help-section {
+    margin-top: auto;
+    padding: 16px;
+    border-top: 1px solid #f0f0f0;
+
+    .help-btn {
+        width: 100%;
+        justify-content: flex-start;
+        color: #555;
+        font-weight: 400;
+        padding: 0 8px;
+
+        mat-icon {
+            margin-right: 12px;
+        }
+
+        .arrow-icon {
+            margin-left: auto;
+            color: #999;
+        }
+    }
+}
