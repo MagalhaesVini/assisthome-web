@@ -12,5 +12,5 @@ export const routes: Routes = [
   { path: 'prestadores', component: PrestadoresComponent },
   { path: 'atendimentos', component: AtendimentosComponent },
 
-  // { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent }
 ];
