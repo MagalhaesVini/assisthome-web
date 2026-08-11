@@ -1,13 +1,23 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { SidebarComponent } from './layout/sidebar/sidebar';
+import { HeaderComponent } from './layout/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatButtonModule],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  imports: [
+    RouterOutlet,
+    MatSidenavModule,
+    MatIconModule,
+    SidebarComponent,
+    HeaderComponent
+  ],
+  templateUrl: "./app.html",
+  styleUrl: "./app.scss"
 })
 export class App {
-  protected readonly title = signal('AssistHome');
+  protected readonly title = signal('Clientes');
+  protected readonly opened = signal(true);
 }

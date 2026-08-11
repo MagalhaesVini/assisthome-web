@@ -1,4 +1,13 @@
-<h1>AssistHome</h1>
-<button mat-raised-button color="primary">Botão Material</button>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav [opened]="opened()" mode="side" class="custom-sidenav">
+    <app-sidebar />
+  </mat-sidenav>
 
-<router-outlet />
+  <mat-sidenav-content>
+    <app-header [title]="title()" (toggleMenu)="opened.set(!opened())"></app-header>
+
+    <div class="content-area">
+      <router-outlet />
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

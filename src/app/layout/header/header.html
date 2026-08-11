@@ -1,0 +1,17 @@
+<mat-toolbar class="main-toolbar">
+    <button mat-icon-button (click)="onToggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="toolbar-title">{{ title }}</span>
+
+    <span class="spacer"></span>
+
+    <div class="user-area">
+        <div class="user-avatar">
+            <mat-icon>person</mat-icon>
+        </div>
+        <span class="user-name">Carlos Oliveira</span>
+        <mat-icon class="dropdown-icon">arrow_drop_down</mat-icon>
+    </div>
+</mat-toolbar>

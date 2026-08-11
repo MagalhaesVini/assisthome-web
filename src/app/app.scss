@@ -1,0 +1,25 @@
+$primary-blue: #1976d2;
+$text-color: #333;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+mat-sidenav-container {
+  flex: 1;
+  background-color: #f5f7fa;
+}
+
+.custom-sidenav {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+}
+
+.content-area {
+  padding: 24px;
+  height: 100%;
+  box-sizing: border-box;
+}
