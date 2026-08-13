@@ -1,0 +1,32 @@
+<div class="api-check-container">
+    <div class="status-card" role="status" aria-live="polite">
+
+        <mat-icon class="status-icon" [class.success]="isSuccess() && !isLoading()"
+            [class.error]="!isSuccess() && !isLoading()" [class.loading]="isLoading()">
+            {{ iconName() }}
+        </mat-icon>
+
+        <h1 class="status-title">AssistHome API</h1>
+
+        <div class="status-badge" [class.badge-success]="isSuccess() && !isLoading()"
+            [class.badge-error]="!isSuccess() && !isLoading()" [class.badge-loading]="isLoading()">
+            {{ statusMessage() }}
+        </div>
+
+        <p class="status-detail">{{ detailText() }}</p>
+
+        <button mat-stroked-button color="primary" class="refresh-btn" [disabled]="isLoading()" (click)="checkNow()">
+            <mat-icon>refresh</mat-icon>
+            Verificar Agora
+        </button>
+
+        <div class="last-checked-slot">
+            @if (lastChecked()) {
+            <span class="last-checked">
+                Última verificação: {{ lastChecked() | date:'HH:mm:ss' }}
+            </span>
+            }
+        </div>
+
+    </div>
+</div>
